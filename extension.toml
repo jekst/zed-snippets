@@ -1,0 +1,8 @@
+id = "live-template"
+name = "Live Template"
+version = "0.0.1"
+schema_version = 1
+authors = ["Jekst <jekst@qq.com>"]
+description = "A collection of snippets."
+repository = "https://github.com/jekst/zed-snippets"
+snippets = "./snippets/*.json"
