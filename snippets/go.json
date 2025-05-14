@@ -1,77 +1,113 @@
 {
-  "consts": {
-    "prefix": "consts",
-    "body": "const(\n${1:name}=${2:value}\n)",
-    "description": "Constants declaration"
-  },
-  "vars": {
-    "prefix": "vars",
-    "body": "var(\n${1:name}=${2:value}\n)",
-    "description": "Variables declaration"
-  },
-  "types": {
-    "prefix": "types",
-    "body": "type(\n${1:name}=${2:value}\n)",
-    "description": "Types declaration"
-  },
-  "fori": {
-    "prefix": "fori",
-    "body": ["for ${2:i}:=0;${2:i}<$1;${2:i}++{\n\n}"],
-    "description": "Indexed for loop"
-  },
-  "forr": {
-    "prefix": "forr",
-    "body": ["for ${2:key},${3:val}:= range $1 {\n$4\n}"],
-    "description": "For range loop"
-  },
-  "err": {
-    "prefix": "err",
-    "body": ["if ${1:err}!=nil {\n$0\n}"],
-    "description": "If error"
-  },
-  "test": {
-    "prefix": "test",
-    "body": ["func Test$1(t *testing.T) {\n$2\n}"],
-    "description": "Test"
-  },
-  "bench": {
-    "prefix": "bench",
-    "body": ["func Benchmark$1(b *testing.B) {\n for b.Loop() {\n$2\n}\n}"],
-    "description": "Benchmark"
-  },
-  "fuzz": {
-    "prefix": "fuzz",
-    "body": ["func Fuzz$1(f *testing.F) {\n$2\n}"],
-    "description": "Fuzzing"
-  },
-  "init": {
-    "prefix": "init",
-    "body": ["func init() {\n$1\n}"],
-    "description": "Init function"
-  },
-  "main": {
-    "prefix": "main",
-    "body": ["func main() {\n$1\n}"],
-    "description": "Main function"
-  },
-  "meth": {
-    "prefix": "meth",
-    "body": ["func ($2 $1) $3(){\n$4\n}"],
-    "description": "Method"
-  },
   "package": {
     "prefix": "p",
     "body": ["package $1"],
-    "description": "Package declaration"
+    "description": "package declaration"
   },
   "import": {
     "prefix": "im",
     "body": ["import(\n$1\n)"],
-    "description": "Import packages"
+    "description": "import packages"
+  },
+
+  "init": {
+    "prefix": "init",
+    "body": ["func init() {\n$1\n}"],
+    "description": "init function"
+  },
+  "main": {
+    "prefix": "main",
+    "body": ["func main() {\n$1\n}"],
+    "description": "main function"
+  },
+  "func": {
+    "prefix": "func",
+    "body": ["func $1() $2{\n$3\n}"],
+    "description": "function"
+  },
+  "meth": {
+    "prefix": "meth",
+    "body": ["func ($2 $1) $3(){\n$4\n}"],
+    "description": "method"
+  },
+  "consts": {
+    "prefix": "consts",
+    "body": "const(\n${1:name}=${2:value}\n)",
+    "description": "constants declaration"
+  },
+  "vars": {
+    "prefix": "vars",
+    "body": "var(\n${1:name}=${2:value}\n)",
+    "description": "variables declaration"
+  },
+  "types": {
+    "prefix": "types",
+    "body": "type(\n${1:name}=${2:value}\n)",
+    "description": "types declaration"
+  },
+  "struct": {
+    "prefix": "struct",
+    "body": "type $1 struct {\n$2\n}",
+    "description": "struct declaration"
+  },
+  "interface": {
+    "prefix": "inter",
+    "body": "type $1 interface {\n$2\n}",
+    "description": "interface declaration"
+  },
+  "fori": {
+    "prefix": "fori",
+    "body": ["for ${2:i}:=0;${2:i}<$1;${2:i}++{\n\n}"],
+    "description": "indexed for loop"
+  },
+  "forr": {
+    "prefix": "forr",
+    "body": ["for ${2:key},${3:val}:= range $1 {\n$4\n}"],
+    "description": "for range loop"
+  },
+  "err": {
+    "prefix": "err",
+    "body": ["if ${1:err}!=nil {\n$0\n}"],
+    "description": "if error"
+  },
+  "test": {
+    "prefix": "test",
+    "body": ["func Test$1(t *testing.T) {\n$2\n}"],
+    "description": "test"
+  },
+  "bench": {
+    "prefix": "bench",
+    "body": ["func Benchmark$1(b *testing.B) {\n for b.Loop() {\n$2\n}\n}"],
+    "description": "benchmark test"
+  },
+  "fuzz": {
+    "prefix": "fuzz",
+    "body": ["func Fuzz$1(f *testing.F) {\n$2\n}"],
+    "description": "fuzzing test"
   },
   "go": {
     "prefix": "go",
     "body": ["go func() {\n$1\n}()"],
-    "description": "Goroutine"
+    "description": "goroutine"
+  },
+  "switch": {
+    "prefix": "switch",
+    "body": ["switch ${1:type} {\ncase $2:\n$3\ndefault:\n}"],
+    "description": "switch statement"
+  },
+  "select": {
+    "prefix": "select",
+    "body": ["select {\ncase ${2:val},${3:ok}:=<-$1:\ndefault:\n}"],
+    "description": "select statement"
+  },
+  "forselect": {
+    "prefix": "fors",
+    "body": ["for {\nselect {\ncase ${2:val},${3:ok}:=<-$1:\ndefault:\n}\n}"],
+    "description": "select statement"
+  },
+  "if": {
+    "prefix": "if",
+    "body": ["if $1 {\n$2\n}"],
+    "description": "if statement"
   }
 }
