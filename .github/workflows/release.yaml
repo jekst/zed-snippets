@@ -10,8 +10,8 @@ jobs:
     steps:
       - uses: huacnlee/zed-extension-action@v1
         with:
-          extension-name: Live Template
-          # extension-path: extensions/${{ extension-name }}
+          extension-name: live-template
+          #extension-path: extensions/${{ extension-name }}
           push-to: jekst/zed-extensions
         env:
           # the personal access token should have "repo" & "workflow" scopes
