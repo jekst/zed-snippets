@@ -22,8 +22,8 @@ A collections of snippets for Zed.
 | `func`      | Create a function                |
 | `meth`      | Create a method                  |
 | `go`        | New goroutine                    |
-| `switch`    | `switch` statement               |
-| `select`    | `select` statement               |
+| `swi`    | `switch` statement               |
+| `sel`    | `select` statement               |
 | `fors`      | for select statement             |
 | `if`        | `if` statement                   |
 | `struct`    | Define a `struct`                |
