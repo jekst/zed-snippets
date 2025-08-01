@@ -1,6 +1,6 @@
 id = "live-template"
 name = "Live Template"
-version = "0.0.3"
+version = "0.0.4"
 schema_version = 1
 authors = ["Jekst <jekst@qq.com>"]
 description = "A collection of snippets."
