@@ -94,18 +94,20 @@
   },
   "switch": {
     "prefix": "swi",
-    "body": ["switch ${1:type} {\n\tcase $2:\n\t$3\n\tdefault:\n\t$4\n\t}"],
+    "body": ["switch ${1:type} {\n\tcase $2:\n\t\t$3\n\tdefault:\n\t\t$4\n\t}"],
     "description": "switch statement"
   },
   "select": {
     "prefix": "sel",
-    "body": ["select {\n\tcase ${2:val},${3:ok}:=<-$1:\n\tdefault:\n\t$4\n\t}"],
+    "body": [
+      "select {\n\tcase ${2:val},${3:ok}:=<-$1:\n\t\t$4\n\tdefault:\n\t\t$5\n\t}"
+    ],
     "description": "select statement"
   },
   "forselect": {
     "prefix": "fors",
     "body": [
-      "for {\n\tselect {\n\tcase ${2:val},${3:ok}:=<-$1:\n\tdefault:\n\t$4\n\t}\n\t}"
+      "for {\n\tselect {\n\tcase ${2:val},${3:ok}:=<-$1:\n\t\t$4\n\tdefault:\n\t\t$5\n\t}\n\t}"
     ],
     "description": "select statement"
   },
